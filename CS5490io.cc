@@ -460,11 +460,10 @@ NAN_MODULE_INIT(InitAll) {
     Nan::Set(target, Nan::New("DigitalRead").ToLocalChecked(), Nan::GetFunction(Nan::New<v8::FunctionTemplate>(DigitalRead)).ToLocalChecked());
     Nan::Set(target, Nan::New("DriverVersion").ToLocalChecked(), Nan::GetFunction(Nan::New<v8::FunctionTemplate>(DriverVersion)).ToLocalChecked());
 
-    if (wiringPiSetupPhys () < 0)
-    {
-        fprintf(stderr, "Unable to setup wiringPi: %s\n", strerror(errno));
-        errormsg("Unable to setup wiringPi");
-    }
+ //   if (wiringPiSetupPhys () < 0) {
+ //       fprintf(stderr, "Unable to setup wiringPi: %s\n", strerror(errno));
+ //       errormsg("Unable to setup wiringPi");
+ //   }
 }
 
 NODE_MODULE(cs5490io, InitAll)
